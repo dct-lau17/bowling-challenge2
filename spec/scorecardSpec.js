@@ -14,5 +14,11 @@ describe('Scorecard', function() {
     expect(scorecard.score()).toEqual(0);
   });
 
+  it("calculates the score", function(){
+    scorecard.roll(1);
+    scorecard.roll(1);
+    expect(scorecard.score()).toEqual(2);
+  });
+
 
 });
