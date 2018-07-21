@@ -13,7 +13,10 @@ Scorecard.prototype.score = function(){
   var score = 0;
 
   for(var frame = 0; frame < 10; frame++){
-    if(this._isSpare(rollIndex)){
+    if(this._isStrike(rollIndex)){
+      score += this._strikeBonus(rollIndex);;
+      rollIndex += 1;
+    }else if(this._isSpare(rollIndex)){
       score += this._spareBonus(rollIndex);
       rollIndex += 2;
     } else {
@@ -35,4 +38,12 @@ Scorecard.prototype._spareBonus = function(rollIndex){
 
 Scorecard.prototype._normalScore = function(rollIndex){
   return this._rolls[rollIndex] + this._rolls[rollIndex + 1];
+};
+
+Scorecard.prototype._isStrike = function(rollIndex){
+  return this._rolls[rollIndex] === 10;
+};
+
+Scorecard.prototype._strikeBonus = function(rollIndex){
+  return this._BONUS + this._rolls[rollIndex + 1] + this._rolls[rollIndex + 2];
 };

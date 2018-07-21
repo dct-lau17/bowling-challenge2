@@ -27,6 +27,14 @@ describe('Scorecard', function() {
     expect(scorecard.score()).toEqual(14);
   });
 
+  it("calculates the strike", function(){
+    scorecard.roll(10);
+    scorecard.roll(5);
+    scorecard.roll(2);
+    rollMultipleTimes(17,0);
+    expect(scorecard.score()).toEqual(24);
+  });
+
 
   function rollMultipleTimes(rolls, pins){
     for(var i = 0; i < rolls; i++){
