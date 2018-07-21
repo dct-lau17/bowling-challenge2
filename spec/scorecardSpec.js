@@ -35,6 +35,11 @@ describe('Scorecard', function() {
     expect(scorecard.score()).toEqual(24);
   });
 
+  it("calculates a perfect game of 300", function(){
+    rollMultipleTimes(12,10);
+    expect(scorecard.score()).toEqual(300);
+  });
+
 
   function rollMultipleTimes(rolls, pins){
     for(var i = 0; i < rolls; i++){

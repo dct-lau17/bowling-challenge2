@@ -14,7 +14,7 @@ Scorecard.prototype.score = function(){
 
   for(var frame = 0; frame < 10; frame++){
     if(this._isStrike(rollIndex)){
-      score += this._strikeBonus(rollIndex);;
+      score += this._strikeBonus(rollIndex);
       rollIndex += 1;
     }else if(this._isSpare(rollIndex)){
       score += this._spareBonus(rollIndex);
