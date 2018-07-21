@@ -6,9 +6,13 @@ describe('Scorecard', function() {
     scorecard = new Scorecard();
   });
 
-  it("you can view your current score", function(){
-   expect(scorecard.score()).toBe(0);
- });
+
+  it("allows a gutter game", function(){
+    for (var i = 0; i < 20; i++){
+      scorecard.roll(0);
+    }
+    expect(scorecard.score()).toEqual(0);
+  });
 
 
 });

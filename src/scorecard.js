@@ -2,7 +2,11 @@ function Scorecard(){
 
 }
 
-Scorecard.prototype.score = function(){
-  return 0;
 
+Scorecard.prototype.roll = function(pins){
+
+};
+
+Scorecard.prototype.score = function(){
+   return 0;
 };
